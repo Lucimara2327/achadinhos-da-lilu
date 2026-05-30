@@ -7,8 +7,8 @@
 // INSTRUÇÕES: Crie uma conta gratuita em https://jsonbin.io
 // 1. Crie um novo Bin com o conteúdo: []
 // 2. Copie o BIN ID e a Master Key e cole abaixo
-const JSONBIN_BIN_ID  = 'SEU_BIN_ID_AQUI';
-const JSONBIN_API_KEY = '$2a$10$SUA_MASTER_KEY_AQUI';
+const JSONBIN_BIN_ID  = '6a1a6a22ddf5aa59f77745e3';
+const JSONBIN_API_KEY = '$2a$10$Z4HJejDZkl9so/G26RQH7uMhz6m7uH0XFIiO./KTvYbwmLx2yb0DC';
 const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
 
 // LocalStorage como cache para funcionar offline
