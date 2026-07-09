@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achadinhos da Lilu — Descobertas com Carinho 💙</title>
+  <meta name="description" content="Achadinhos da Lilu — produtos selecionados com carinho. Links afiliados sem custo adicional para você.">
+  <meta name="theme-color" content="#0ea5e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1a2e" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Achadinhos da Lilu">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
+  <div id="overlay"></div>
+  <div id="toast"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="logo.png" alt="Achadinhos da Lilu" style="height:44px;width:44px;object-fit:contain;border-radius:8px;">
+        <div>
+          <span class="logo-text">Achadinhos da Lilu</span>
+          <span class="logo-sub">produtos com carinho</span>
+        </div>
+      </div>
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <nav id="side-menu">
+    <div class="menu-header">
+      <div class="menu-logo">
+        <span>💙 Achadinhos da Lilu</span>
+        <span class="logo-sub" style="display:block;font-size:.75rem;opacity:.8">produtos com carinho</span>
+      </div>
+      <button class="menu-close" id="menu-close">✕</button>
+    </div>
+
+    <div class="menu-nav">
+      <a href="#" id="nav-inicio">🏠 Início</a>
+      <a href="#" id="nav-cats">🗂️ Categorias</a>
+      <a href="#" id="nav-ofertas">✨ Destaques</a>
+      <a href="#" id="nav-sobre">💙 Sobre</a>
+    </div>
+
+    <div class="menu-notice">
+      💙 Estamos sempre adicionando novos achadinhos! Caso o site demore a carregar, tente recarregar a página — agradecemos a paciência.
+    </div>
+
+    <div class="menu-cats">
+      <div class="menu-cats-title">Filtrar por Categoria</div>
+      <div class="cat-chips">
+        <span class="cat-chip" data-cat="Beleza">💄 Beleza</span>
+        <span class="cat-chip" data-cat="Perfumes">🌸 Perfumes</span>
+        <span class="cat-chip" data-cat="Moda">👗 Moda</span>
+        <span class="cat-chip" data-cat="Casa">🏡 Casa</span>
+        <span class="cat-chip" data-cat="Cozinha">🍳 Cozinha</span>
+        <span class="cat-chip" data-cat="Eletrônicos">📱 Eletrônicos</span>
+        <span class="cat-chip" data-cat="Decoração">🖼 Decoração</span>
+        <span class="cat-chip" data-cat="Utilidades">🧰 Utilidades</span>
+        <span class="cat-chip" data-cat="Presentes">🎁 Presentes</span>
+        <span class="cat-chip" data-cat="Promoções">🔥 Promoções</span>
+      </div>
+    </div>
+
+    <div class="menu-footer">
+      <div class="menu-social">
+        <a class="social-btn social-ig" href="https://www.instagram.com/achadinhos_dalilu/" target="_blank" rel="noopener">📷 Instagram</a>
+        <a class="social-btn social-pt" href="https://pin.it/4AqohtkwV" target="_blank" rel="noopener">📌 Pinterest</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main id="main">
+
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Os melhores achadinhos<br>para você 💙</h1>
+        <p class="hero-sub">✨ Um espaço de descobertas com links afiliados — sem custo adicional para você.</p>
+      </div>
+    </section>
+
+    <!-- Search -->
+    <div id="search-section">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="search-input" placeholder="Buscar produtos, categorias…" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Limpar busca">✕</button>
+      </div>
+    </div>
+
+    <!-- Posts em Destaque (carrossel) -->
+    <section class="section" id="offers-section">
+      <div class="section-header">
+        <h2 class="section-title">✨ Achados em Destaque</h2>
+      </div>
+      <div class="offers-carousel-wrap">
+        <div class="offers-grid" id="offers-grid"></div>
+      </div>
+      <div id="offers-dots" class="offers-dots"></div>
+    </section>
+
+    <!-- Produtos por loja -->
+    <section class="section" id="products-section">
+      <div class="section-header">
+        <div class="store-cards" id="store-tabs">
+          <button class="store-card store-ml active" data-store="Mercado Livre" onclick="selectStore(this)">
+            <span class="store-card-icon">🛒</span>
+            <span class="store-card-name">Mercado Livre</span>
+            <span class="store-card-sub">Clique para ver</span>
+          </button>
+          <button class="store-card store-shopee" data-store="Shopee" onclick="selectStore(this)">
+            <span class="store-card-icon">🧡</span>
+            <span class="store-card-name">Shopee</span>
+            <span class="store-card-sub">Clique para ver</span>
+          </button>
+          <button class="store-card store-shein" data-store="Shein" onclick="selectStore(this)">
+            <span class="store-card-icon">🖤</span>
+            <span class="store-card-name">Shein</span>
+            <span class="store-card-sub">Clique para ver</span>
+          </button>
+        </div>
+      </div>
+      <div id="filter-bar" class="active-filter-bar"></div>
+      <div class="products-grid" id="products-grid"></div>
+    </section>
+
+    <!-- Favoritos da Lilu -->
+    <section class="section" id="favoritos-section" style="display:none">
+      <div class="section-header">
+        <h2 class="section-title">💙 Favoritos da Lilu</h2>
+      </div>
+      <div class="offers-carousel-wrap">
+        <div class="offers-grid" id="favoritos-grid"></div>
+      </div>
+      <div id="favoritos-dots" class="offers-dots"></div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section" id="about-section">
+      <img src="logo.png" alt="Achadinhos da Lilu" style="width:90px;height:90px;object-fit:contain;margin:0 auto 16px;display:block;">
+      <h2 class="about-title">Achadinhos da Lilu</h2>
+      <p class="about-text">
+        💙 O Achadinhos da Lilu reúne produtos, ofertas e recomendações selecionadas para ajudar você a descobrir novidades, tendências e boas oportunidades de compra de forma simples e organizada.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Achadinhos da Lilu</div>
+    <p class="footer-tagline">Achadinhos selecionados com carinho 💙</p>
+    <div class="footer-links">
+      <a class="footer-link footer-link-ig" href="https://www.instagram.com/achadinhos_dalilu/" target="_blank" rel="noopener">📷 Instagram</a>
+      <a class="footer-link footer-link-pt" href="https://pin.it/4AqohtkwV" target="_blank" rel="noopener">📌 Pinterest</a>
+    </div>
+    <p class="footer-copy">© 2026 Achadinhos da Lilu — Todos os direitos reservados</p>
+    <a href="admin.html" class="admin-tiny">admin</a>
+  </footer>
+
+  <!-- Modal produto -->
+  <div id="product-modal" class="product-modal" style="display:none">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-img-wrap" id="modal-img"></div>
+      <div class="modal-body">
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-extras" id="modal-extras"></div>
+        <div style="display:flex;gap:8px;">
+          <button class="modal-btn" id="modal-btn" style="flex:1">Conferir Produto ↗</button>
+          <button class="modal-btn" id="modal-share-btn" style="flex:0 0 48px;padding:0;font-size:1.1rem;" title="Compartilhar">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
